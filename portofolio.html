@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoneManWebs Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #e0e0e0, #f4f4f4);
+            color: #333;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        header {
+            background: #333; /* Solid background color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Change to relative */
+            z-index: 1000;
+        }
+        #logo {
+            margin: 20px 0;
+        }
+        #logo img {
+            max-width: 150px; /* Adjust as needed */
+            height: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end; /* Align navbar to the right */
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        nav a:hover {
+            background: #f39c12;
+            transform: scale(1.1);
+        }
+        #popupMessage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.ibb.co/gz9Zmn2/IMG-20240913-145109-954.jpg') no-repeat center center/cover;
+            backdrop-filter: blur(5px);
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+            z-index: 2000;
+        }
+        #popupMessage h1 {
+            font-size: 4rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #popupMessage p {
+            font-size: 1.5rem;
+            animation: fadeIn 2s ease-in-out 0.5s;
+        }
+        #content {
+            padding-top: 40px; /* Space for header */
+        }
+        #projects {
+            padding: 60px 20px;
+        }
+        .project-item {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .project-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .btn-custom {
+            background: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-custom:hover {
+            background: #d68910;
+            transform: scale(1.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-end; /* Align items to the right on small screens */
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            #popupMessage h1 {
+                font-size: 3rem;
+            }
+            #popupMessage p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div id="logo">
+        <img src="https://i.ibb.co/gz9Zmn2/IMG-20240913-145109-954.jpg" alt="Logo" class="img-fluid">
+        <h1>LoneManWebs</h1>
+    </div>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div id="popupMessage">
+    <h1>LoneManWebs</h1>
+    <p>Transforming Ideas into Digital Reality</p>
+    <button class="btn btn-custom" id="discoverMore">Discover More</button>
+</div>
+
+<div id="content">
+    <section id="services" style="display: none;">
+        <div class="container">
+            <h2>My Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item text-center">
+                        <i class="bi bi-pencil icon" style="color: #f39c12; font-size: 50px;"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Creating engaging user experiences and beautiful interfaces.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item text-center">
+                        <i class="bi bi-laptop icon" style="color: #f39c12; font-size: 50px;"></i>
+                        <h3>Web Development</h3>
+                        <p>Building responsive and user-friendly websites that cater to your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item text-center">
+                        <i class="bi bi-cloud icon" style="color: #f39c12; font-size: 50px;"></i>
+                        <h3>Hosting Services</h3>
+                        <p>Reliable hosting solutions for your online presence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="display: none;">
+        <div class="container">
+            <h2 class="project-header">My Projects</h2>
+            <div class="project-item">
+                <h3><i class="bi bi-shop"></i> AMA Stores</h3>
+                <p>An e-commerce store that connects users with a variety of products and services. <a href="https://example.com/ama" target="_blank">View Project</a></p>
+            </div>
+            <div class="project-item">
+                <h3><i class="bi bi-chat"></i> BloxBot</h3>
+                <p>A chatbot designed for various platforms to assist users with queries. <a href="https://example.com/bloxbot" target="_blank">View Project</a></p>
+            </div>
+            <div class="project-item">
+                <h3><i class="bi bi-bicycle"></i> JustSport</h3>
+                <p>A bike business that offers a range of bicycles and accessories for cycling enthusiasts. <a href="https://example.com/justsport" target="_blank">View Project</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container text-center">
+            <h2>Contact Me on <a href="https://wa.me/+96181868877" target="_blank">WhatsApp</a></h2>
+            <h3>Or fill out the form below:</h3>
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="message" placeholder="Your Message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="about" style="display: none;">
+        <div class="container text-center">
+            <h2>About Me</h2>
+            <p>Welcome to my corner of the digital world! I am Abdelwahab Ghannoum, a passionate creative mind behind LoneManWebs With a keen eye for design and a heart for functionality, I thrive on transforming ideas into stunning, user-friendly websites. My journey began with a love for technology and a desire to connect ipeople through the web. From crafting engaging user experieences to implementing cutting-edge features. I pour my heart into every project. Wether im developing a sleek e-commerce site or a dynamic chaatbot, my goal is to empower buisnesses and individuals with websites that truly represent their vision. Join me on this exciting journey as i turn dreams into digital reality. one line of code at a time.</p>
+            <img src="https://source.unsplash.com/random/400x300?person" alt="About Me" class="img-fluid rounded-circle" style="width: 200px; height: 200px; object-fit: cover;">
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 LoneManWebs. All Rights Reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Show the popup with fade-in effect
+        $('#popupMessage').fadeIn(1000);
+
+        // Click event for Discover More button
+        $('#discoverMore').click(function() {
+            $('#popupMessage').fadeOut(1000);
+        });
+
+        // Show sections after the popup is dismissed
+        $('#discoverMore').click(function() {
+            $('#services, #projects, #about').fadeIn(1000);
+        });
+    });
+</script>
+</body>
+</html>
