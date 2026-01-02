@@ -2,571 +2,955 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LonemanWebs | Web Developer</title>
+    <meta name="description" content="Professional Full Stack Developer & Web Solutions Provider. Custom websites, hosting, and development services.">
+    <meta name="keywords" content="web developer, full stack, hosting, web design, programming">
+    <meta name="author" content="LonemanWebs">
+    <title>LonemanWebs | Web Development & Hosting in Beirut</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --secondary: #06b6d4;
+            --dark: #0f0f23;
+            --light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            background-color: #000;
-            color: white;
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            font-family: 'Courier New', monospace;
+            scroll-behavior: smooth;
         }
         
-        .matrix-rain {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.3;
-            pointer-events: none;
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
         }
         
-        .glitch {
-            position: relative;
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
         }
         
-        .glitch::before, .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 #ff00ff;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-        
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 #00ffff;
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-        
-        @keyframes glitch-anim {
-            0% { clip: rect(31px, 9999px, 94px, 0); }
-            10% { clip: rect(112px, 9999px, 76px, 0); }
-            20% { clip: rect(85px, 9999px, 77px, 0); }
-            30% { clip: rect(27px, 9999px, 97px, 0); }
-            40% { clip: rect(64px, 9999px, 98px, 0); }
-            50% { clip: rect(61px, 9999px, 85px, 0); }
-            60% { clip: rect(99px, 9999px, 114px, 0); }
-            70% { clip: rect(34px, 9999px, 115px, 0); }
-            80% { clip: rect(98px, 9999px, 129px, 0); }
-            90% { clip: rect(43px, 9999px, 96px, 0); }
-            100% { clip: rect(82px, 9999px, 64px, 0); }
-        }
-        
-        @keyframes glitch-anim2 {
-            0% { clip: rect(65px, 9999px, 119px, 0); }
-            10% { clip: rect(79px, 9999px, 85px, 0); }
-            20% { clip: rect(75px, 9999px, 99px, 0); }
-            30% { clip: rect(37px, 9999px, 117px, 0); }
-            40% { clip: rect(86px, 9999px, 82px, 0); }
-            50% { clip: rect(89px, 9999px, 96px, 0); }
-            60% { clip: rect(68px, 9999px, 113px, 0); }
-            70% { clip: rect(72px, 9999px, 102px, 0); }
-            80% { clip: rect(102px, 9999px, 123px, 0); }
-            90% { clip: rect(115px, 9999px, 76px, 0); }
-            100% { clip: rect(82px, 9999px, 64px, 0); }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .section-container {
-            backdrop-filter: blur(1px);
-            border: 1px solid rgba(168, 85, 247, 0.5);
-            border-radius: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .skill-card {
+            background: rgba(15, 15, 35, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
             transition: all 0.3s ease;
         }
         
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
+        .section-container:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
         }
         
-        .project-card {
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 15, 35, 0.9);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.5);
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
         }
         
-        .social-icon {
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            border: 2px solid var(--primary);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
-        .social-icon:hover {
-            transform: scale(1.2);
-            color: #a855f7;
+        .btn-secondary:hover {
+            background: rgba(139, 92, 246, 0.1);
+            transform: translateY(-2px);
         }
         
-        .glitch-text {
-            animation: glitch 1s linear infinite;
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 8px;
         }
         
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-3px, 3px); }
-            40% { transform: translate(-3px, -3px); }
-            60% { transform: translate(3px, 3px); }
-            80% { transform: translate(3px, -3px); }
-            100% { transform: translate(0); }
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
-<body>
-    <canvas id="matrix" class="matrix-rain"></canvas>
-    <nav class="container mx-auto px-6 py-4">
-        <div class="flex justify-between items-center">
-            <div class="text-2xl font-bold text-purple-500">LonemanWebs</div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="text-white hover:text-purple-500 transition">About</a>
-                <a href="#skills" class="text-white hover:text-purple-500 transition">Skills</a>
-                <a href="#projects" class="text-white hover:text-purple-500 transition">Projects</a>
-                <a href="#socials" class="text-white hover:text-purple-500 transition">Socials</a>
-                <a href="#contact" class="text-white hover:text-purple-500 transition">Contact</a>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="nav-blur fixed w-full z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center">
+                    <span class="font-bold text-white">LW</span>
+                </div>
+                <span class="text-xl font-bold gradient-text">LonemanWebs</span>
             </div>
-            <button class="md:hidden text-white focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300">About</a>
+                <a href="#services" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300">Services</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300">Portfolio</a>
+                <a href="#hosting" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300">Hosting</a>
+                <a href="#contact" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300">Contact</a>
+            </div>
+            
+            <button class="btn-primary hidden md:block" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                Get Started
+            </button>
+            
+            <button id="menuBtn" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
             </button>
         </div>
     </nav>
-    <section class="min-h-screen flex items-center justify-center px-6">
-    <div class="text-center section-container p-8 md:p-12 max-w-4xl mx-auto">
-        <div class="glitch mb-6">
-            <h1 id="scramble-title" class="text-4xl md:text-6xl font-bold text-white" data-text="Welcome">Welcome</h1>
-        </div>
-        <p id="scramble-subtitle" class="text-xl md:text-2xl mb-8 text-gray-300">
-            <span id="scramble-name">I'm </span>
-            <span class="text-purple-500 font-bold">LonemanWebs</span>
-            <span id="scramble-desc">, a passionate Full Stack Developer</span>
-        </p>
-        <div class="flex justify-center space-x-4">
-            <a href="#projects" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-medium transition">View My Work</a>
-            <a href="#contact" class="px-6 py-3 border border-purple-500 hover:bg-purple-900 rounded-md text-white font-medium transition">Contact Me</a>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 md:hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-80" onclick="toggleMenu()"></div>
+        <div class="absolute top-0 left-0 w-64 h-full bg-gray-900 p-6">
+            <div class="flex justify-between items-center mb-10">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center">
+                        <span class="font-bold text-white">LW</span>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">LonemanWebs</span>
+                </div>
+                <button onclick="toggleMenu()" class="text-2xl text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-6">
+                <a href="#home" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300 text-lg" onclick="toggleMenu()">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300 text-lg" onclick="toggleMenu()">About</a>
+                <a href="#services" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300 text-lg" onclick="toggleMenu()">Services</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300 text-lg" onclick="toggleMenu()">Portfolio</a>
+                <a href="#hosting" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300 text-lg" onclick="toggleMenu()">Hosting</a>
+                <a href="#contact" class="text-gray-300 hover:text-white hover:gradient-text transition duration-300 text-lg" onclick="toggleMenu()">Contact</a>
+                <button class="btn-primary mt-6" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); toggleMenu()">
+                    Get Started
+                </button>
+            </div>
         </div>
     </div>
-</section>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <div class="inline-block px-4 py-2 rounded-full glass-effect mb-6">
+                        <span class="text-sm code-font gradient-text">Full Stack Developer</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        <span class="block">Building Digital</span>
+                        <span class="gradient-text typewriter">Experiences</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 max-w-2xl">
+                        I create fast, responsive, and scalable web solutions that help businesses grow in the digital space. From design to deployment, I handle it all.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <button class="btn-primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
+                            View My Work
+                        </button>
+                        <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                            <i class="fas fa-paper-plane mr-2"></i> Start a Project
+                        </button>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">50+</div>
+                            <div class="text-gray-400 text-sm">Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">100%</div>
+                            <div class="text-gray-400 text-sm">Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold gradient-text">24/7</div>
+                            <div class="text-gray-400 text-sm">Support</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute -top-6 -left-6 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
+                        <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-2000"></div>
+                        <div class="relative section-container p-8">
+                            <div class="floating">
+                                <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-purple-500/30">
+                                    <div class="w-full h-full bg-gradient-to-br from-purple-900 via-gray-900 to-cyan-900 flex items-center justify-center">
+                                        <i class="fas fa-code text-6xl gradient-text"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-8 text-center">
+                                <h3 class="text-2xl font-bold mb-2">Abed Ghannoum</h3>
+                                <p class="text-gray-400 code-font">Full Stack Developer</p>
+                                <div class="mt-4 flex justify-center space-x-4">
+                                    <a href="https://github.com/lonemanwebs" class="text-gray-400 hover:text-white transition">
+                                        <i class="fab fa-github text-2xl"></i>
+                                    </a>
+                                    <a href="mailto:abedghannoum9@gmail.com" class="text-gray-400 hover:text-white transition">
+                                        <i class="fas fa-envelope text-2xl"></i>
+                                    </a>
+                                    <a href="https://wa.me/96181868877" class="text-gray-400 hover:text-white transition">
+                                        <i class="fab fa-whatsapp text-2xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <section id="about" class="py-20 px-6">
-        <div class="container mx-auto section-container p-8 md:p-12 max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-500">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <div class="w-full md:w-1/3 flex justify-center">
-                    <div class="relative">
-                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-500 overflow-hidden">
-                            <div class="w-full h-full bg-gradient-to-br from-purple-900 to-black flex items-center justify-center">
-                                <span class="text-5xl font-bold text-purple-400">LW</span>
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">With expertise in both frontend and backend technologies, I deliver complete web solutions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="section-container p-8 card-hover">
+                        <h3 class="text-2xl font-bold mb-6">My Journey</h3>
+                        <p class="text-gray-300 mb-6">
+                            I started my coding journey several years ago, fascinated by how lines of code could transform into beautiful, functional applications. Since then, I've dedicated myself to mastering both frontend and backend technologies.
+                        </p>
+                        <p class="text-gray-300 mb-6">
+                            What drives me is the challenge of solving real-world problems through technology. Each project is an opportunity to learn, innovate, and deliver value.
+                        </p>
+                        <p class="text-gray-300">
+                            As a solo developer, I offer personalized attention to every project, ensuring quality and timely delivery that exceeds expectations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-code mr-3 gradient-text"></i> Technical Skills
+                        </h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-300">Frontend Development</span>
+                                    <span class="text-gray-400">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-300">Backend Development</span>
+                                    <span class="text-gray-400">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-300">Database Management</span>
+                                    <span class="text-gray-400">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-300">DevOps & Hosting</span>
+                                    <span class="text-gray-400">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 88%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="absolute -bottom-2 -right-2 bg-purple-600 rounded-full p-2">
-                            <div class="bg-black rounded-full p-2">
-                                <i class="fas fa-code text-purple-400 text-xl"></i>
-                            </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="section-container p-4 text-center card-hover">
+                            <i class="fas fa-bolt text-2xl gradient-text mb-2"></i>
+                            <h4 class="font-bold">Fast Delivery</h4>
+                        </div>
+                        <div class="section-container p-4 text-center card-hover">
+                            <i class="fas fa-shield-alt text-2xl gradient-text mb-2"></i>
+                            <h4 class="font-bold">Secure Code</h4>
+                        </div>
+                        <div class="section-container p-4 text-center card-hover">
+                            <i class="fas fa-mobile-alt text-2xl gradient-text mb-2"></i>
+                            <h4 class="font-bold">Responsive</h4>
+                        </div>
+                        <div class="section-container p-4 text-center card-hover">
+                            <i class="fas fa-headset text-2xl gradient-text mb-2"></i>
+                            <h4 class="font-bold">24/7 Support</h4>
                         </div>
                     </div>
-                </div>
-                <div class="w-full md:w-2/3">
-                    <p class="text-lg mb-6 text-gray-300">
-                        Hello! I'm LonemanWebs, a full-stack developer with a passion for creating beautiful, functional, and user-friendly digital experiences. With expertise in both front-end and back-end technologies, I bring ideas to life through code.
-                    </p>
-                    <p class="text-lg mb-6 text-gray-300">
-                        My journey in development started several years ago, and since then I've worked on various projects ranging from landing pages to webs backed with servers. 
-                    </p>
-                    <p class="text-lg text-gray-300">
-                        I’m a solo developer, but I have the skills, energy, and passion to bring your vision to life.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="skills" class="py-20 px-6 bg-black bg-opacity-50">
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 grid-pattern">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-500">My Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Frontend Card -->
-                <div class="skill-card section-container p-6 rounded-lg">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-laptop-code text-2xl text-purple-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Frontend</h3>
-                        <p class="text-gray-400">HTML, CSS, JavaScript, TailwindCSS, Bootstrap</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">My <span class="gradient-text">Services</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Comprehensive web solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="section-container p-8 card-hover">
+                    <div class="w-16 h-16 rounded-full stats-card flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-2xl gradient-text"></i>
                     </div>
+                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-400 mb-6">Custom websites and web applications built with modern technologies and best practices.</p>
+                    <ul class="text-gray-300 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Responsive Design</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> SEO Optimized</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Performance Focused</li>
+                    </ul>
+                    <div class="text-2xl font-bold gradient-text mb-4">From $199</div>
+                    <button class="btn-primary w-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Get Quote
+                    </button>
                 </div>
-                <div class="skill-card section-container p-6 rounded-lg">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-server text-2xl text-purple-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Backend</h3>
-                        <p class="text-gray-400">Node.js, Express, SQLite</p>
+                
+                <div class="section-container p-8 card-hover relative">
+                    <div class="absolute -top-3 right-6 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        Popular
                     </div>
+                    <div class="w-16 h-16 rounded-full stats-card flex items-center justify-center mb-6">
+                        <i class="fas fa-shopping-cart text-2xl gradient-text"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">E-commerce Solutions</h3>
+                    <p class="text-gray-400 mb-6">Complete online stores with secure payment integration and inventory management.</p>
+                    <ul class="text-gray-300 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Payment Integration</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Product Management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Order Tracking</li>
+                    </ul>
+                    <div class="text-2xl font-bold gradient-text mb-4">From $499</div>
+                    <button class="btn-primary w-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Get Quote
+                    </button>
                 </div>
-                <div class="skill-card section-container p-6 rounded-lg">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-gamepad text-2xl text-purple-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Hosting</h3>
-                        <p class="text-gray-400">Secure , 24/7 uptime premium hosting with tiers</p>
+                
+                <div class="section-container p-8 card-hover">
+                    <div class="w-16 h-16 rounded-full stats-card flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-2xl gradient-text"></i>
                     </div>
-                </div>
-                <div class="skill-card section-container p-6 rounded-lg">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-chalkboard-teacher text-2xl text-purple-400"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Tutoring</h3>
-                        <p class="text-gray-400">Programing 1 to 1 classes teach how to use html css& javascript.</p>
-                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Web Hosting</h3>
+                    <p class="text-gray-400 mb-6">Reliable hosting solutions with 99.9% uptime, security, and expert support.</p>
+                    <ul class="text-gray-300 space-y-2 mb-6">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> 24/7 Monitoring</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Daily Backups</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> SSL Certificates</li>
+                    </ul>
+                    <div class="text-2xl font-bold gradient-text mb-4">From $5/month</div>
+                    <button class="btn-primary w-full" onclick="document.getElementById('hosting').scrollIntoView({behavior: 'smooth'})">
+                        View Plans
+                    </button>
                 </div>
             </div>
         </div>
     </section>
-    <section id="hosting" class="py-20 px-6 bg-black bg-opacity-50">
-    <div class="container mx-auto section-container p-8 md:p-12 max-w-6xl">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-500">Hosting Packages</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Basic Hosting -->
-            <div class="section-container p-6 rounded-lg text-center">
-                <h3 class="text-xl font-bold mb-4">Basic</h3>
-                <p class="text-gray-400 mb-4">60$/year – Static sites & small projects</p>
-                <ul class="text-gray-400 mb-6">
-                    <li>1.5GB RAM</li>
-                    <li>2GB Storage</li>
-                    <li>24/7 Support</li>
-                </ul>
-                <a href="#contact" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">Order Now</a>
-            </div>
-            <!-- Pro Hosting -->
-            <div class="section-container p-6 rounded-lg text-center relative">
-    <!-- Ribbon inside card -->
-    <div class="absolute top-2 right-2 bg-purple-600 text-white px-2 py-1 text-sm font-bold rounded">
-        Most Popular!
-    </div>
 
-    <h3 class="text-xl font-bold mb-4">Pro</h3>
-    <p class="text-gray-400 mb-4">120$/year – Medium sites & small servers</p>
-    <ul class="text-gray-400 mb-6">
-        <li>3GB RAM</li>
-        <li>10GB Storage</li>
-        <li>Database Support</li>
-        <li>Priority Support</li>
-    </ul>
-    <a href="#contact" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">Order Now</a>
-</div>
-
-            <!-- Premium Hosting -->
-            <div class="section-container p-6 rounded-lg text-center">
-                <h3 class="text-xl font-bold mb-4">Premium</h3>
-                <p class="text-gray-400 mb-4">200$/year – Large projects & dynamic sites</p>
-                <ul class="text-gray-400 mb-6">
-                    <li>6GB RAM</li>
-                    <li>50GB Storage</li>
-                    <li>Full Database Support</li>
-                    <li>Priority 24/7 Support</li>
-                </ul>
-                <a href="#contact" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">Order Now</a>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="web-services" class="py-20 px-6">
-    <div class="container mx-auto section-container p-8 md:p-12 max-w-6xl">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-500">Web Development Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Static Websites -->
-            <div class="section-container p-6 rounded-lg text-center">
-                <h3 class="text-xl font-bold mb-4">Static Website</h3>
-                <p class="text-gray-400 mb-4">Perfect for personal / landing pages</p>
-                <p class="text-purple-400 font-bold mb-4">Starting at $50</p>
-                <a href="#contact" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">Order Now</a>
-            </div>
-            <!-- Dynamic Websites -->
-            <div class="section-container p-6 rounded-lg text-center">
-                <h3 class="text-xl font-bold mb-4">Dynamic Website</h3>
-                <p class="text-gray-400 mb-4">Database-driven, interactive websites</p>
-                <p class="text-purple-400 font-bold mb-4">Starting at $100</p>
-                <a href="#contact" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">Order Now</a>
-            </div>
-            <!-- E-commerce / Custom -->
-            <div class="section-container p-6 rounded-lg text-center">
-                <h3 class="text-xl font-bold mb-4">E-commerce / Custom</h3>
-                <p class="text-gray-400 mb-4">Online shops & custom platforms</p>
-                <p class="text-purple-400 font-bold mb-4">Starting at $300</p>
-                <a href="#contact" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">Order Now</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section id="projects" class="py-20 px-6">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-6">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-500">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="project-card section-container p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Bike store</h3>
-                    <p class="text-gray-400 mb-4">A bike store that displays the store's stock with contact information</p>
-                    <div class="mb-4">
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">Html</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">Javascript</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">Node.js</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">SQL</span>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">A selection of my recent work across different industries</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="section-container overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-900 to-cyan-900 flex items-center justify-center">
+                        <i class="fas fa-bicycle text-6xl text-white opacity-50"></i>
                     </div>
-                    <a href="https://urfavvabed.github.io/JustSport/" class="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">View Project</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bike Store</h3>
+                        <p class="text-gray-400 mb-4">E-commerce platform for a bike retailer with inventory management and customer reviews.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">CSS</span>
+                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Node.js</span>
+                        </div>
+                        <a href="https://urfavvabed.github.io/JustSport/" target="_blank" class="btn-secondary w-full text-center">
+                            <i class="fas fa-external-link-alt mr-2"></i> View Live
+                        </a>
+                    </div>
                 </div>
-                <div class="project-card section-container p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">E-commerce football kits site</h3>
-                    <p class="text-gray-400 mb-4">Mockup site that sells football kits</p>
-                    <div class="mb-4">
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">HTML</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">Javascript</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">CSS</span>
+                
+                <!-- Project 2 -->
+                <div class="section-container overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-900 to-purple-900 flex items-center justify-center">
+                        <i class="fas fa-futbol text-6xl text-white opacity-50"></i>
                     </div>
-                    <a href="https://urfavvabed.github.io/Offside/" class="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">View Project</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Football Kits Store</h3>
+                        <p class="text-gray-400 mb-4">Online store for football merchandise with team-based filtering and cart functionality.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-full text-sm">HTML</span>
+                            <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-full text-sm">Tailwind</span>
+                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <a href="https://urfavvabed.github.io/Offside/" target="_blank" class="btn-secondary w-full text-center">
+                            <i class="fas fa-external-link-alt mr-2"></i> View Live
+                        </a>
+                    </div>
                 </div>
-                <div class="project-card section-container p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Electronice E-commerce site</h3>
-                    <p class="text-gray-400 mb-4">E-commerce site with functionl database that sells electronics</p>
-                    <div class="mb-4">
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">HTML</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">CSS</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">Node.js</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">SQL</span>
+                
+                <!-- Project 3 -->
+                <div class="section-container overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-cyan-900 to-blue-900 flex items-center justify-center">
+                        <i class="fas fa-laptop text-6xl text-white opacity-50"></i>
                     </div>
-                    <a href="#" class="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">View Project</a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Electronics E-commerce</h3>
+                        <p class="text-gray-400 mb-4">Full-featured electronics store with user accounts, reviews, and admin dashboard.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-red-900/30 text-red-300 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-green-900/30 text-green-300 rounded-full text-sm">Express</span>
+                            <span class="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm">MySQL</span>
+                            <span class="px-3 py-1 bg-yellow-900/30 text-yellow-300 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <button class="btn-secondary w-full" onclick="showProjectModal('electronics')">
+                            <i class="fas fa-info-circle mr-2"></i> Case Study
+                        </button>
+                    </div>
                 </div>
-                <div class="project-card section-container p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Task Management App</h3>
-                    <p class="text-gray-400 mb-4">A productivity app with task organization, reminders, and team collaboration features.</p>
-                    <div class="mb-4">
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">Vue.js</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">Firebase</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
-                    </div>
-                    <a href="#" class="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">View Project</a>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="btn-primary" onclick="window.open('https://github.com/lonemanwebs', '_blank')">
+                    <i class="fab fa-github mr-2"></i> View More on GitHub
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hosting Plans -->
+    <section id="hosting" class="py-20 px-6 grid-pattern">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Hosting <span class="gradient-text">Plans</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Reliable hosting solutions for every need</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="section-container p-8 card-hover">
+                    <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                    <p class="text-gray-400 mb-6">Perfect for personal blogs and small projects</p>
+                    <div class="text-4xl font-bold gradient-text mb-2">$4.99<span class="text-lg text-gray-400">/month</span></div>
+                    <p class="text-gray-400 mb-8">Billed annually at $59.88</p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>10 GB SSD Storage</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Unlimited Bandwidth</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Free SSL Certificate</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>24/7 Support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn-secondary w-full" onclick="selectPlan('Starter')">
+                        Select Plan
+                    </button>
                 </div>
-                <div class="project-card section-container p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Learning Platform</h3>
-                    <p class="text-gray-400 mb-4">An interactive platform for programming tutorials with code execution and quizzes.</p>
-                    <div class="mb-4">
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">Django</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">Python</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                
+                <!-- Pro Plan -->
+                <div class="section-container p-8 card-hover relative border-2 border-purple-500">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-cyan-500 text-white px-6 py-1 rounded-full text-sm font-bold">
+                        MOST POPULAR
                     </div>
-                    <a href="#" class="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">View Project</a>
+                    <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                    <p class="text-gray-400 mb-6">Ideal for growing businesses and e-commerce</p>
+                    <div class="text-4xl font-bold gradient-text mb-2">$9.99<span class="text-lg text-gray-400">/month</span></div>
+                    <p class="text-gray-400 mb-8">Billed annually at $119.88</p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>50 GB SSD Storage</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Unlimited Bandwidth</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Free SSL Certificate</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Daily Backups</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn-primary w-full" onclick="selectPlan('Professional')">
+                        Select Plan
+                    </button>
                 </div>
-                <div class="project-card section-container p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Weather Dashboard</h3>
-                    <p class="text-gray-400 mb-4">A weather application with real-time data, forecasts, and location-based services.</p>
-                    <div class="mb-4">
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">React</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm mr-2">API</span>
-                        <span class="inline-block bg-purple-900 text-purple-300 px-3 py-1 rounded-full text-sm">Chart.js</span>
-                    </div>
-                    <a href="#" class="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-md text-white transition">View Project</a>
+                
+                <!-- Premium Plan -->
+                <div class="section-container p-8 card-hover">
+                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                    <p class="text-gray-400 mb-6">For large-scale applications and high traffic</p>
+                    <div class="text-4xl font-bold gradient-text mb-2">$19.99<span class="text-lg text-gray-400">/month</span></div>
+                    <p class="text-gray-400 mb-8">Billed annually at $239.88</p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>200 GB SSD Storage</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Unlimited Bandwidth</span>
+                        </li>
+                        <li class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Free SSL Certificate</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Daily Backups</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Dedicated IP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>24/7 Phone Support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn-secondary w-full" onclick="selectPlan('Enterprise')">
+                        Select Plan
+                    </button>
                 </div>
             </div>
         </div>
     </section>
-    <section id="socials" class="py-20 px-6 bg-black bg-opacity-50">
-        <div class="container mx-auto section-container p-8 md:p-12 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-500 fade-in">Connect With Me</h2>
-            <div class="flex justify-center flex-wrap gap-6">
-                <a href="#" class="social-icon w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center text-2xl text-white hover:text-purple-500">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="social-icon w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center text-2xl text-white hover:text-purple-500">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="#" class="social-icon w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center text-2xl text-white hover:text-purple-500">
-                    <i class="fab fa-discord"></i>
-                </a>
-                <a href="https://wa.me/96181868877?text=Hello%2C%20I%27m%20interested%20in%20your%20web%20development%20services.%20Can%20you%20share%20more%20details%20about%20your%20packages%20and%20pricing%3F" class="social-icon w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center text-2xl text-white hover:text-purple-500">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="mailto:abedghannoum9@gmail.com" class="social-icon w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center text-2xl text-white hover:text-purple-500">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://github.com/lonemanwebs" class="social-icon w-16 h-16 rounded-full bg-gray-900 flex items-center justify-center text-2xl text-white hover:text-purple-500">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="py-20 px-6">
-        <div class="container mx-auto section-container p-8 md:p-12 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-purple-500">Get In Touch</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Let's <span class="gradient-text">Connect</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Ready to start your project? Get in touch for a free consultation.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-purple-900 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-purple-400"></i>
+                    <div class="section-container p-8">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full stats-card flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope gradient-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <a href="mailto:abedghannoum9@gmail.com" class="text-gray-400 hover:text-white transition">
+                                        abedghannoum9@gmail.com
+                                    </a>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-gray-400">Email</p>
-                                <p class="text-white">abedghannoum9@gmail.com</p>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full stats-card flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone gradient-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Phone / WhatsApp</h4>
+                                    <a href="https://wa.me/96181868877" class="text-gray-400 hover:text-white transition">
+                                        +961 81 868 877
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full stats-card flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt gradient-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Location</h4>
+                                    <p class="text-gray-400">Beirut, Lebanon</p>
+                                    <p class="text-gray-400 text-sm">Available for remote work worldwide</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-purple-900 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-phone-alt text-purple-400"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-400">Phone</p>
-                                <p class="text-white">+961 81 868 877</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-10 h-10 bg-purple-900 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt text-purple-400"></i>
-                            </div>
-                            <div>
-                                <p class="text-gray-400">Location</p>
-                                <p class="text-white">Beirut , Lebanon</p>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-bold mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/lonemanwebs" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center hover:bg-purple-900/30 transition">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="https://wa.me/96181868877" target="_blank" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center hover:bg-green-900/30 transition">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </a>
+                                <a href="mailto:abedghannoum9@gmail.com" class="w-12 h-12 rounded-full glass-effect flex items-center justify-center hover:bg-red-900/30 transition">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div>
-                    <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-400 mb-1">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-gray-400 mb-1">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-gray-400 mb-1">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"></textarea>
-                        </div>
-                        <button type="submit" class="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-md text-white font-medium transition">Send Message</button>
-                    </form>
+                    <div class="section-container p-8">
+                        <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-400 mb-2">Full Name</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-400 mb-2">Email Address</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white">
+                            </div>
+                            
+                            <div>
+                                <label for="service" class="block text-gray-400 mb-2">Service Interested In</label>
+                                <select id="service" class="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white">
+                                    <option value="">Select a service</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="ecommerce">E-commerce Solution</option>
+                                    <option value="hosting">Web Hosting</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-400 mb-2">Project Details</label>
+                                <textarea id="message" rows="5" required class="w-full px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary w-full">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="py-8 px-6 border-t border-gray-800">
-        <div class="container mx-auto text-center">
-            <p class="text-gray-400">&copy; 2023 LonemanWebs. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="text-gray-400 hover:text-purple-500 transition">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-purple-500 transition">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-purple-500 transition">
-                    <i class="fab fa-twitter"></i>
-                </a>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center">
+                            <span class="font-bold text-white">LW</span>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">LonemanWebs</span>
+                    </div>
+                    <p class="text-gray-400">Building the web, one line of code at a time.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="flex justify-center space-x-6 mb-4">
+                        <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+                        <a href="#services" class="text-gray-400 hover:text-white transition">Services</a>
+                        <a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a>
+                        <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                    </div>
+                    <p class="text-gray-400 text-sm">&copy; 2024 LonemanWebs. All rights reserved.</p>
+                </div>
+                
+                <div class="text-right">
+                    <a href="#home" class="btn-secondary inline-flex items-center">
+                        <i class="fas fa-arrow-up mr-2"></i> Back to Top
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center p-6">
+        <div class="absolute inset-0 bg-black bg-opacity-70" onclick="closeModal()"></div>
+        <div class="relative section-container p-8 max-w-md w-full">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full bg-green-900/30 flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-3xl text-green-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Message Sent!</h3>
+                <p class="text-gray-400 mb-6">Thank you for your message. I'll get back to you within 24 hours.</p>
+                <button onclick="closeModal()" class="btn-primary">Continue Browsing</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const nums = '0123456789';
-        const alphabet = katakana + latin + nums;
-        
-        const fontSize = 16;
-        
-        const columns = canvas.width / fontSize;
-        
-        const drops = [];
-        for (let i = 0; i < columns; i++) {
-            drops[i] = 1;
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
         }
-        
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            ctx.fillStyle = '#a855f7';
-            ctx.font = fontSize + 'px monospace';
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
             
-            for (let i = 0; i < drops.length; i++) {
-                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                
-                drops[i]++;
-            }
-        }
-        
-        setInterval(draw, 33);
-        
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            // Create mailto link
+            const subject = `New Project Inquiry: ${service}`;
+            const body = `Name: ${name}%0AEmail: ${email}%0AService: ${service}%0A%0AMessage:%0A${message}`;
+            const mailtoLink = `mailto:abedghannoum9@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success modal after a delay
+            setTimeout(() => {
+                document.getElementById('successModal').classList.remove('hidden');
+                document.getElementById('contactForm').reset();
+            }, 500);
         });
-        
-        const heroText = document.querySelector('.glitch h1');
-        setTimeout(() => {
-            heroText.classList.remove('glitch');
-            heroText.classList.add('glitch-text');
-        }, 3000);
-        
-        setTimeout(() => {
-            heroText.classList.remove('glitch-text');
-        }, 4000);
 
-        function scrambleText(element, finalText, delay = 50, callback = null) {
-    const chars = "!<>-_\\/[]{}—=+*^?#________";
-    let currentText = "";
-    let iterations = 0;
-
-    const interval = setInterval(() => {
-        currentText = finalText
-            .split("")
-            .map((char, index) => {
-                if (index < iterations) return finalText[index];
-                return chars[Math.floor(Math.random() * chars.length)];
-            })
-            .join("");
-
-        element.textContent = currentText;
-
-        if (iterations >= finalText.length) {
-            clearInterval(interval);
-            if (callback) callback();
+        // Modal Functions
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
         }
-        iterations += 1 / 3;
-    }, delay);
-}
 
-scrambleText(document.getElementById("scramble-title"), "Welcome", 50, () => {
-    scrambleText(document.getElementById("scramble-name"), "I'm ", 30, () => {
-        scrambleText(document.getElementById("scramble-desc"), ", a passionate Full Stack Developer");
-    });
-});
+        function selectPlan(plan) {
+            const message = `I'm interested in the ${plan} hosting plan. Please send me more details.`;
+            document.getElementById('message').value = message;
+            document.getElementById('service').value = 'hosting';
+            document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+            document.getElementById('name').focus();
+        }
+
+        function showProjectModal(project) {
+            alert(`Detailed case study for ${project} project coming soon!`);
+        }
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'about') {
+                        animateSkillBars();
+                    }
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+
+        // Mobile menu event listeners
+        document.getElementById('menuBtn').addEventListener('click', toggleMenu);
+
+        // Close mobile menu on clicking outside
+        document.getElementById('mobileMenu').addEventListener('click', function(e) {
+            if (e.target.id === 'mobileMenu') {
+                toggleMenu();
+            }
+        });
+
+        // Initialize typewriter effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const typewriter = document.querySelector('.typewriter');
+            setTimeout(() => {
+                typewriter.style.animation = 'none';
+                setTimeout(() => {
+                    typewriter.style.animation = 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite';
+                }, 50);
+            }, 3500);
+        });
+
+        // Back to top button behavior
+        document.querySelector('footer a[href="#home"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
     </script>
 </body>
 </html>
-
